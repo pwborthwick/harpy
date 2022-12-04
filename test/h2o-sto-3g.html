@@ -1,0 +1,1224 @@
+<head>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			margin-left: 40px;
+			font-size:10px;
+		}
+		td,th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 4px;
+		}
+
+		#bond td{padding:10px}
+		#bond tr{background-color:#FFFFFF}
+	</style>
+</head>
+<body style='background-color:white;font:10px' onload='collapse();'>
+	<p style='text-align:center;font-size:20px;text-decoration:underline;'>	<span>HARPY RHF output for h2o</span></p>
+	<p style='text-align:center;font-weight:bold;border-style:solid;border-width:1px;'>atoms</p>
+	<p style='font-size:10px;margin-left:40px;' ><span>number of atoms is 3</span></p>
+
+	<table>
+		<caption>atomic input data</caption>
+		<tr><th></th><th>id</th><th>number</th><th>x</th><th>y</th><th>z</th><th>weight</th></tr>
+		<tr><td>1</td><td>O1</td><td>8</td><td>0.0</td><td>-0.143225816552</td><td>0.0</td><td>15.99903</td></tr>
+		<tr><td>2</td><td>H1</td><td>1</td><td>1.638036840407</td><td>1.136548822547</td><td>0.0</td><td>1.00784</td></tr>
+		<tr><td>3</td><td>H2</td><td>1</td><td>-1.638036840407</td><td>1.136548822547</td><td>0.0</td><td>1.00784</td></tr>
+	</table>
+	<br>
+	<table>
+		<caption>interatom seperations</caption>
+		<tr><th>atoms</th><th>d (bohr)</th></tr>
+		<tr><td>O1-H1</td><td>2.079</td></tr>
+		<tr><td>O1-H2</td><td>2.079</td></tr>
+	</table>
+	<br>
+	<table>
+		<caption>interatom angles</caption>
+		<tr><th>atoms</th><th>angle</th></tr>
+		<tr><td>H1-O1-H2</td><td>104.0</td></tr>
+	</table>
+	<br>
+	<table><caption>center of mass</caption>
+		<tr><td>x</td><td>y</td><td>z</td></tr>
+		<tr><td>0.0</td><td>-0.0</td><td>0.0</td></tr>
+	</table>
+	<br>
+	<table id='bond'>
+		<caption>inferred bonds</caption>
+		<tr><th></th><th>O1</th><th>H1</th><th>H2</th></tr><tr><td>O1</td><td></td><td>X</td><td>X</td></tr><tr><td>H1</td><td>X</td><td></td><td></td></tr><tr><td>H2</td><td>X</td><td></td><td></td></tr></tr>
+	</table>
+	<br>
+	<table>
+		<caption>inertia tensor</caption>
+		<tr><th>x</th><th>y</th><th>z</th>
+		<tr><td>2.931939</td><td>0.0</td><td>0.0</td></tr>
+		<tr><td>0.0</td><td>5.408401</td><td>0.0</td></tr>
+		<tr><td>0.0</td><td>0.0</td><td>8.340341</td></tr>
+	</table>
+	<br>
+	<table>
+		<caption>principal moments (amu bohr<sup>2</sup>)</caption>
+		<tr><th>I<sub>a</sub></th><th>I<sub>b</sub></th><th>I<sub>c</sub></th>
+		
+		<tr><td>2.931939</td><td>5.408401</td><td>8.340341</td></tr>
+	</table>
+	<br>
+	<table><tr><th>rotor type</th><th>asymmetric top</th></tr></table>
+	<br>
+	<table width=240px>
+		<caption>rotational constants (g cm<sup>-1</sup>)</caption>
+		<tr><th>A</th><th>B</th><th>C</th>
+		
+		<tr><td>20.5324</td><td>11.1308</td><td>7.2179</td></tr>
+	</table>
+	<br>
+	<table><tr><th>nuclear repulsion energy</th><th>8.00236706</th></tr></table>
+	<br>
+	<p style='text-align:center;font-weight:bold;border-style:solid;border-width:1px;'>orbitals</p>
+
+	<br>
+	<table><tr><th>number of electrons</th><th>10</th></tr></table>
+	<br>
+	<table><tr><th>basis set</th><th>sto-3g</th></tr></table>
+	<br>
+	<table><tr><th>Spherical
+<br>Basis Set Exchange
+<br>Version v0.8.12
+<br>https://www.basissetexchange.org
+<br>Basis set: STO-3G
+<br>Description: STO-3G Minimal Basis (3 functions/AO)
+<br>Role: orbital
+<br>Version: 1  (Data from Gaussian09)
+<br></th></tr></table>
+	<br>
+	<table>
+		<caption>orbital occupancy</caption>
+		<tr><td>number of basis functions</td><td>7</td></tr>
+		<tr><td>number doubly occupied orbitals</td><td>5</td></tr>
+		<tr><td>number of virtual orbitals</td><td>2</td></tr>
+	</table>
+	<br>
+	<table>
+		<caption>atomic orbitals</caption>
+		<td>
+		<td>1</td><td>O1</td><td>O</td><td>s<sub></sub></td><td></td>
+		<td>2</td><td>O1</td><td>O</td><td>s<sub></sub></td><td></td>
+		<td>3</td><td>O1</td><td>O</td><td>p<sub>x</sub></td><td></td>
+		<td>4</td><td>O1</td><td>O</td><td>p<sub>y</sub></td><td></td></tr>
+		<td>
+		<td>5</td><td>O1</td><td>O</td><td>p<sub>z</sub></td><td></td>
+		<td>6</td><td>H1</td><td>H</td><td>s<sub></sub></td><td></td>
+		<td>7</td><td>H2</td><td>H</td><td>s<sub></sub></td><td></td>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>aufbau atomic occupancies</caption>
+		<tr><th></th><th>id</th><th>orbitals</th></tr>
+		<tr><td>1</td><td>O1</td><td>1s<sup>2</sup>2s<sup>2</sup>2p<sup>4</sup></td></tr>
+		<tr><td>2</td><td>H1</td><td>1s<sup>1</sup></td></tr>
+		<tr><td>3</td><td>H2</td><td>1s<sup>1</sup></td></tr>
+		</tr>
+	</table>
+	<br>
+	<p style='text-align:center;font-weight:bold;border-style:solid;border-width:1px;'>pre-scf</p>
+
+	<br>
+	<table>
+		<tr><th>initial fock guess</th><th>core hamiltonian</th>
+	</table>
+	<br>
+	<table>
+		<caption>overlap</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>1.0000</td>
+		<td>0.2367</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0384</td>
+		<td>0.0384</td></tr>
+		<tr><td>2</td>
+		<td>0.2367</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.3861</td>
+		<td>0.3861</td></tr>
+		<tr><td>3</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.2684</td>
+		<td>-0.2684</td></tr>
+		<tr><td>4</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>0.2097</td>
+		<td>0.2097</td></tr>
+		<tr><td>5</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td></tr>
+		<tr><td>6</td>
+		<td>0.0384</td>
+		<td>0.3861</td>
+		<td>0.2684</td>
+		<td>0.2097</td>
+		<td>0.0000</td>
+		<td>1.0000</td>
+		<td>0.1818</td></tr>
+		<tr><td>7</td>
+		<td>0.0384</td>
+		<td>0.3861</td>
+		<td>-0.2684</td>
+		<td>0.2097</td>
+		<td>0.0000</td>
+		<td>0.1818</td>
+		<td>1.0000</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>kinetic</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>29.0032</td>
+		<td>-0.1680</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>-0.0084</td>
+		<td>-0.0084</td></tr>
+		<tr><td>2</td>
+		<td>-0.1680</td>
+		<td>0.8081</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0705</td>
+		<td>0.0705</td></tr>
+		<tr><td>3</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>2.5287</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.1471</td>
+		<td>-0.1471</td></tr>
+		<tr><td>4</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>2.5287</td>
+		<td>0.0000</td>
+		<td>0.1149</td>
+		<td>0.1149</td></tr>
+		<tr><td>5</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>2.5287</td>
+		<td>0.0000</td>
+		<td>0.0000</td></tr>
+		<tr><td>6</td>
+		<td>-0.0084</td>
+		<td>0.0705</td>
+		<td>0.1471</td>
+		<td>0.1149</td>
+		<td>0.0000</td>
+		<td>0.7600</td>
+		<td>-0.0040</td></tr>
+		<tr><td>7</td>
+		<td>-0.0084</td>
+		<td>0.0705</td>
+		<td>-0.1471</td>
+		<td>0.1149</td>
+		<td>0.0000</td>
+		<td>-0.0040</td>
+		<td>0.7600</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>Coulomb</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>-61.5806</td>
+		<td>-7.4108</td>
+		<td>0.0000</td>
+		<td>-0.0145</td>
+		<td>0.0000</td>
+		<td>-1.2317</td>
+		<td>-1.2317</td></tr>
+		<tr><td>2</td>
+		<td>-7.4108</td>
+		<td>-10.0091</td>
+		<td>0.0000</td>
+		<td>-0.1769</td>
+		<td>0.0000</td>
+		<td>-2.9772</td>
+		<td>-2.9772</td></tr>
+		<tr><td>3</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>-9.9876</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>-1.8222</td>
+		<td>1.8222</td></tr>
+		<tr><td>4</td>
+		<td>-0.0145</td>
+		<td>-0.1769</td>
+		<td>0.0000</td>
+		<td>-9.9440</td>
+		<td>0.0000</td>
+		<td>-1.4718</td>
+		<td>-1.4718</td></tr>
+		<tr><td>5</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>-9.8759</td>
+		<td>0.0000</td>
+		<td>0.0000</td></tr>
+		<tr><td>6</td>
+		<td>-1.2317</td>
+		<td>-2.9772</td>
+		<td>-1.8222</td>
+		<td>-1.4718</td>
+		<td>0.0000</td>
+		<td>-5.3002</td>
+		<td>-1.0672</td></tr>
+		<tr><td>7</td>
+		<td>-1.2317</td>
+		<td>-2.9772</td>
+		<td>1.8222</td>
+		<td>-1.4718</td>
+		<td>0.0000</td>
+		<td>-1.0672</td>
+		<td>-5.3002</td></tr>
+		</tr>
+	</table>
+	<style>
+		#fixed-header {
+			width: 200px;
+			table-layout: fixed;
+			border-collapse: collapse;		}
+		#fixed-header tbody{
+			display: block;
+			width: 100%;
+			overflow: auto;
+			height: 210px;		}
+		#fixed-header thead tr {
+			display: block;
+		}		#fixed-header th, #fixed-header td {
+			padding: 0px;
+			text-align: center;
+			width: 200px;
+		}	</style>
+	<br>	<table id='fixed-header'>
+		<caption>two electron repulsion integrals <sup>*</sup></caption>		<thead><tr><th width='20px'>&#60; i j | k l &#62;</th><th></th></thead>
+		<tbody>
+			<tr><td>&#60; 1 1 | 1 1 &#62;</td><td>4.785066</td></tr>
+			<tr><td>&#60; 1 1 | 1 2 &#62;</td><td>0.74138</td></tr>
+			<tr><td>&#60; 1 1 | 1 6 &#62;</td><td>0.121785</td></tr>
+			<tr><td>&#60; 1 1 | 1 7 &#62;</td><td>0.121785</td></tr>
+			<tr><td>&#60; 1 1 | 2 1 &#62;</td><td>0.74138</td></tr>
+			<tr><td>&#60; 1 1 | 2 2 &#62;</td><td>1.118947</td></tr>
+			<tr><td>&#60; 1 1 | 2 6 &#62;</td><td>0.313334</td></tr>
+			<tr><td>&#60; 1 1 | 2 7 &#62;</td><td>0.313334</td></tr>
+			<tr><td>&#60; 1 1 | 3 3 &#62;</td><td>1.115814</td></tr>
+			<tr><td>&#60; 1 1 | 3 6 &#62;</td><td>0.183539</td></tr>
+			<tr><td>&#60; 1 1 | 3 7 &#62;</td><td>-0.183539</td></tr>
+			<tr><td>&#60; 1 1 | 4 4 &#62;</td><td>1.115814</td></tr>
+			<tr><td>&#60; 1 1 | 4 6 &#62;</td><td>0.143396</td></tr>
+			<tr><td>&#60; 1 1 | 4 7 &#62;</td><td>0.143396</td></tr>
+			<tr><td>&#60; 1 1 | 5 5 &#62;</td><td>1.115814</td></tr>
+			<tr><td>&#60; 1 1 | 6 1 &#62;</td><td>0.121785</td></tr>
+			<tr><td>&#60; 1 1 | 6 2 &#62;</td><td>0.313334</td></tr>
+			<tr><td>&#60; 1 1 | 6 3 &#62;</td><td>0.183539</td></tr>
+			<tr><td>&#60; 1 1 | 6 4 &#62;</td><td>0.143396</td></tr>
+			<tr><td>&#60; 1 1 | 6 6 &#62;</td><td>0.470723</td></tr>
+			<tr><td>&#60; 1 1 | 6 7 &#62;</td><td>0.105864</td></tr>
+			<tr><td>&#60; 1 1 | 7 1 &#62;</td><td>0.121785</td></tr>
+			<tr><td>&#60; 1 1 | 7 2 &#62;</td><td>0.313334</td></tr>
+			<tr><td>&#60; 1 1 | 7 3 &#62;</td><td>-0.183539</td></tr>
+			<tr><td>&#60; 1 1 | 7 4 &#62;</td><td>0.143396</td></tr>
+			<tr><td>&#60; 1 1 | 7 6 &#62;</td><td>0.105864</td></tr>
+			<tr><td>&#60; 1 1 | 7 7 &#62;</td><td>0.470723</td></tr>
+			<tr><td>&#60; 1 2 | 1 1 &#62;</td><td>0.74138</td></tr>
+			<tr><td>&#60; 1 2 | 1 2 &#62;</td><td>0.136873</td></tr>
+			<tr><td>&#60; 1 2 | 1 6 &#62;</td><td>0.022309</td></tr>
+		</tbody>
+	</table>
+		<p style='margin-left:40px;font-size:10px;'><sup>*</sup>  non-zero integrals (total 406) first 30 shown</p>
+	<br>
+	<table>
+		<caption>S<sup>-&#189</sup></caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>1.0236</td>
+		<td>-0.1369</td>
+		<td>-0.0000</td>
+		<td>-0.0075</td>
+		<td>0.0000</td>
+		<td>0.0190</td>
+		<td>0.0190</td></tr>
+		<tr><td>2</td>
+		<td>-0.1369</td>
+		<td>1.1579</td>
+		<td>0.0000</td>
+		<td>0.0722</td>
+		<td>0.0000</td>
+		<td>-0.2223</td>
+		<td>-0.2223</td></tr>
+		<tr><td>3</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>1.0733</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>-0.1758</td>
+		<td>0.1758</td></tr>
+		<tr><td>4</td>
+		<td>-0.0075</td>
+		<td>0.0722</td>
+		<td>0.0000</td>
+		<td>1.0383</td>
+		<td>0.0000</td>
+		<td>-0.1185</td>
+		<td>-0.1185</td></tr>
+		<tr><td>5</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td></tr>
+		<tr><td>6</td>
+		<td>0.0190</td>
+		<td>-0.2223</td>
+		<td>-0.1758</td>
+		<td>-0.1185</td>
+		<td>0.0000</td>
+		<td>1.1297</td>
+		<td>-0.0626</td></tr>
+		<tr><td>7</td>
+		<td>0.0190</td>
+		<td>-0.2223</td>
+		<td>0.1758</td>
+		<td>-0.1185</td>
+		<td>0.0000</td>
+		<td>-0.0626</td>
+		<td>1.1297</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>orthogonal initial Fock</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>-19.8799</td>
+		<td>-2.6854</td>
+		<td>-0.0000</td>
+		<td>-0.0534</td>
+		<td>0.0000</td>
+		<td>-0.0962</td>
+		<td>-0.0962</td></tr>
+		<tr><td>2</td>
+		<td>-2.6854</td>
+		<td>-1.3120</td>
+		<td>0.0000</td>
+		<td>0.1020</td>
+		<td>-0.0000</td>
+		<td>-0.4050</td>
+		<td>-0.4050</td></tr>
+		<tr><td>3</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>-0.0094</td>
+		<td>0.0000</td>
+		<td>-0.0000</td>
+		<td>-0.4011</td>
+		<td>0.4011</td></tr>
+		<tr><td>4</td>
+		<td>-0.0534</td>
+		<td>0.1020</td>
+		<td>0.0000</td>
+		<td>-0.1506</td>
+		<td>0.0000</td>
+		<td>-0.3003</td>
+		<td>-0.3003</td></tr>
+		<tr><td>5</td>
+		<td>0.0000</td>
+		<td>-0.0000</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>-0.3876</td>
+		<td>-0.0000</td>
+		<td>0.0000</td></tr>
+		<tr><td>6</td>
+		<td>-0.0962</td>
+		<td>-0.4050</td>
+		<td>-0.4011</td>
+		<td>-0.3003</td>
+		<td>-0.0000</td>
+		<td>-0.0197</td>
+		<td>-0.0693</td></tr>
+		<tr><td>7</td>
+		<td>-0.0962</td>
+		<td>-0.4050</td>
+		<td>0.4011</td>
+		<td>-0.3003</td>
+		<td>0.0000</td>
+		<td>-0.0693</td>
+		<td>-0.0197</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>initial density</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>1.0549</td>
+		<td>-0.2328</td>
+		<td>-0.0000</td>
+		<td>0.0526</td>
+		<td>-0.0000</td>
+		<td>-0.0082</td>
+		<td>-0.0082</td></tr>
+		<tr><td>2</td>
+		<td>-0.2328</td>
+		<td>1.0151</td>
+		<td>-0.0000</td>
+		<td>-0.2823</td>
+		<td>0.0000</td>
+		<td>-0.0305</td>
+		<td>-0.0305</td></tr>
+		<tr><td>3</td>
+		<td>-0.0000</td>
+		<td>-0.0000</td>
+		<td>0.3688</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>0.2751</td>
+		<td>-0.2751</td></tr>
+		<tr><td>4</td>
+		<td>0.0526</td>
+		<td>-0.2823</td>
+		<td>-0.0000</td>
+		<td>0.5660</td>
+		<td>-0.0000</td>
+		<td>0.2586</td>
+		<td>0.2586</td></tr>
+		<tr><td>5</td>
+		<td>-0.0000</td>
+		<td>0.0000</td>
+		<td>0.0000</td>
+		<td>-0.0000</td>
+		<td>1.0000</td>
+		<td>0.0000</td>
+		<td>-0.0000</td></tr>
+		<tr><td>6</td>
+		<td>-0.0082</td>
+		<td>-0.0305</td>
+		<td>0.2751</td>
+		<td>0.2586</td>
+		<td>0.0000</td>
+		<td>0.3345</td>
+		<td>-0.0759</td></tr>
+		<tr><td>7</td>
+		<td>-0.0082</td>
+		<td>-0.0305</td>
+		<td>-0.2751</td>
+		<td>0.2586</td>
+		<td>-0.0000</td>
+		<td>-0.0759</td>
+		<td>0.3345</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table><tr><td>initial SCF electronic energy</td><td>-82.94444702</td></tr></table>
+	<br>
+	<p style='text-align:center;font-weight:bold;border-style:solid;border-width:1px;'>scf</p>
+
+		<table><tr><td>iteration limit</td><td>100</td></tr><tr><td>convergence criterion</td><td>1e-08</td></tr></table>
+	<br><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>on</b></p>
+	<table>
+		<tr><th>electronic energy (E)</th><th>&#916;(E)</th><th>rms(D)</th></tr>
+		<tr><td>82.9444470159</td><td>0</td><td>0</td></tr>
+	</table>
+	<br><p style='margin-left:40px;font-size:10px;'><b>SCF converged in </b>1 cycles</b></p>
+	<br>
+	<p style='text-align:center;font-weight:bold;border-style:solid;border-width:1px;'>post-scf</p>
+
+	<br>
+	<table><tr><th>final scf total energy</th><th>-74.9420799540</th></tr></table>
+	<br>
+	<table style='margin-left:54px;'><caption>final orbital energies</caption>
+		<tr>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr><tr>
+		<th>-20.262891</th>
+		<th>-1.209697</th>
+		<th>-0.547965</th>
+		<th>-0.436527</th>
+		<th>-0.387587</th>
+		<th>0.477619</th>
+		<th>0.588139</th></tr>
+	</table>
+	<br>
+	<table>
+		<caption>orbital coeffiecients</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>-0.994435</td>
+		<td>-0.239159</td>
+		<td>0.000000</td>
+		<td>-0.093683</td>
+		<td>-0.000000</td>
+		<td>0.111640</td>
+		<td>0.000000</td></tr>
+		<tr><td>2</td>
+		<td>-0.024097</td>
+		<td>0.885736</td>
+		<td>-0.000000</td>
+		<td>0.479586</td>
+		<td>0.000000</td>
+		<td>-0.669579</td>
+		<td>-0.000000</td></tr>
+		<tr><td>3</td>
+		<td>0.000000</td>
+		<td>-0.000000</td>
+		<td>-0.607285</td>
+		<td>-0.000000</td>
+		<td>0.000000</td>
+		<td>0.000000</td>
+		<td>-0.919234</td></tr>
+		<tr><td>4</td>
+		<td>-0.003162</td>
+		<td>0.085896</td>
+		<td>0.000000</td>
+		<td>-0.747431</td>
+		<td>0.000000</td>
+		<td>-0.738489</td>
+		<td>-0.000000</td></tr>
+		<tr><td>5</td>
+		<td>0.000000</td>
+		<td>-0.000000</td>
+		<td>-0.000000</td>
+		<td>-0.000000</td>
+		<td>-1.000000</td>
+		<td>-0.000000</td>
+		<td>0.000000</td></tr>
+		<tr><td>6</td>
+		<td>0.004594</td>
+		<td>0.144040</td>
+		<td>-0.452998</td>
+		<td>-0.329471</td>
+		<td>0.000000</td>
+		<td>0.709850</td>
+		<td>0.732461</td></tr>
+		<tr><td>7</td>
+		<td>0.004594</td>
+		<td>0.144040</td>
+		<td>0.452998</td>
+		<td>-0.329471</td>
+		<td>-0.000000</td>
+		<td>0.709850</td>
+		<td>-0.732461</td></tr>
+		</tr>
+	</table>
+	<br>
+	<table>
+		<caption>final density matrix</caption>
+		<tr><th></th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		<th>6</th>
+		<th>7</th></tr>
+		<tr><td>1</td>
+		<td>1.054874</td>
+		<td>-0.232798</td>
+		<td>0.000000</td>
+		<td>0.052623</td>
+		<td>0.000000</td>
+		<td>-0.008151</td>
+		<td>-0.008151</td></tr>
+		<tr><td>2</td>
+		<td>-0.232798</td>
+		<td>1.015111</td>
+		<td>0.000000</td>
+		<td>-0.282300</td>
+		<td>-0.000000</td>
+		<td>-0.030539</td>
+		<td>-0.030539</td></tr>
+		<tr><td>3</td>
+		<td>0.000000</td>
+		<td>0.000000</td>
+		<td>0.368795</td>
+		<td>-0.000000</td>
+		<td>-0.000000</td>
+		<td>0.275099</td>
+		<td>-0.275099</td></tr>
+		<tr><td>4</td>
+		<td>0.052623</td>
+		<td>-0.282300</td>
+		<td>-0.000000</td>
+		<td>0.566042</td>
+		<td>0.000000</td>
+		<td>0.258615</td>
+		<td>0.258615</td></tr>
+		<tr><td>5</td>
+		<td>0.000000</td>
+		<td>-0.000000</td>
+		<td>-0.000000</td>
+		<td>0.000000</td>
+		<td>1.000000</td>
+		<td>-0.000000</td>
+		<td>0.000000</td></tr>
+		<tr><td>6</td>
+		<td>-0.008151</td>
+		<td>-0.030539</td>
+		<td>0.275099</td>
+		<td>0.258615</td>
+		<td>-0.000000</td>
+		<td>0.334527</td>
+		<td>-0.075887</td></tr>
+		<tr><td>7</td>
+		<td>-0.008151</td>
+		<td>-0.030539</td>
+		<td>-0.275099</td>
+		<td>0.258615</td>
+		<td>0.000000</td>
+		<td>-0.075887</td>
+		<td>0.334527</td></tr>
+		</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>charge analysis</caption>
+	<tr><td>orbital</td><td>atom</td><td>density</td></tr><tr><td colspan='3' style='background-color:#dcdcdc';>Mulliken</td></tr><tr><td>1</td><td>O1</td><td>1.9983</td></tr><tr><td>2</td><td>O1</td><td>1.8728</td></tr><tr><td>3</td><td>O1</td><td>1.033</td></tr><tr><td>4</td><td>O1</td><td>1.349</td></tr><tr><td>5</td><td>O1</td><td>2.0</td></tr><tr><td>6</td><td>H1</td><td>0.8734</td></tr><tr><td>7</td><td>H2</td><td>0.8734</td></tr><tr><td colspan='3'>reduced To atoms centers</td></tr><tr><td></td><td>O1</td><td>8.2531</td></tr><tr><td></td><td>H1</td><td>0.8734</td></tr><tr><td></td><td>H2</td><td>0.8734</td></tr><tr><td colspan='3'>corrected for charge</td></tr><tr><td></td><td>O1</td><td>-0.2531</td></tr><tr><td></td><td>H1</td><td>0.1266</td></tr><tr><td></td><td>H2</td><td>0.1266</td></tr><tr><td colspan='3' style='background-color:#dcdcdc';>Lowdin</td></tr><tr><td></td><td>O1</td><td>8.1842</td></tr><tr><td></td><td>H1</td><td>0.9079</td></tr><tr><td></td><td>H2</td><td>0.9079</td></tr><tr><td colspan='3'>corrected for charge</td></tr><tr><td></td><td>O1</td><td>-0.1842</td></tr><tr><td></td><td>H1</td><td>0.0921</td></tr><tr><td></td><td>H2</td><td>0.0921</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>Mayer bond orders and valence</caption>
+	<tr><th></th><th>H1</th><th>H2</th><th>valence</th></tr>
+		<tr><td>O1</td><td>0.9752</td><td>0.9752</td><td>1.95</tr>
+		<tr><td>H1</td><td colspan='1'></td><td>0.0088</td><td>0.98</tr>
+		<tr><td>H2</td><td colspan='2'></td><td>0.98</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>energy partition</caption>
+	<tr><th>description</th><th>components</th><th>energy</th></tr>		<tr><td>kinetic</td><td>t</td><td>74.334933</td></tr>		<tr><td>nuclear</td><td>n</td><td>8.002367</td></tr>		<tr><td>coulomb</td><td>v</td><td>-194.534493</td></tr>		<tr><td>one electron</td><td>t+v</td><td>-120.199559</td></tr>		<tr><td>two electron</td><td>g</td><td>37.255112</td></tr>		<tr><td>total</td><td>t+v + 2g + n</td><td>-74.94208</td></tr>		<tr><td> total potential</td><td>v + g + n</td><td>-149.277013</td></tr>		<tr><td> total kinetic</td><td>t</td><td>74.334933</td></tr>		<tr><td>viral ratio</td><td>(v+g+n)/t</td><td>-2.008168</td></tr>		<tr><td>bare hamiltonian</td><td>t+v</td><td>-120.199559</td></tr>		<tr><td>orbital</td><td>2&#949;</td><td>-45.689335</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>dipoles</caption>
+	<tr><th></th><th>x</th><th>y</th><th>z</th><th>(au)</th><th>(debye)</th></tr>
+		<tr><td></td><td>0.0</td><td>0.6035</td><td>0.0</td><td>0.6035</td><td>1.5339</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>quadrupoles (debye &#8491)</caption>
+	<tr><th>x<sup>2</sup></th><th>y<sup>2</sup></th><th>z<sup>2</sup></th><th>xy</th><th>yz</th><th>zx</th></tr>
+		<tr><td>-4.3165</td><td>-5.2051</td><td>-6.2072</td><td>0.0</td><td>-0.0</td><td>0.0</td></tr>
+		<tr><td colspan='6'>traceless</td></tr>
+		<tr><td>0.9264</td><td>0.0378</td><td>-0.9642</td><td>0.0</td><td>-0.0</td><td>0.0</td></tr>
+		<tr><td colspan='6'>eigenvalues</td></tr>
+		<tr><td>0.9264</td><td>0.0378</td><td>-0.9642</td></tr>
+		<tr><td colspan='5'>trace is close to zero</td><td>True</td></tr>
+		<tr><td colspan='4'>amplitude</td><td colspan='2'>1.3377</td></tr>
+		<tr><td colspan='4'>asymmetry</td><td colspan='2'>0.8886</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>moller-plesset</caption>
+	<tr><td>{mp2} parallel spin</td><td>-0.00310622</td></tr>
+	<tr><td>{mp2} anti-parallel spin</td><td>-0.04604342</td></tr>
+	<tr><td>{mp2} total</td><td>-0.04914964</td></tr><tr><td colspan='2'></td></tr>
+	<tr><td>{mp3} total</td><td>-0.01418782</td></tr><tr><td colspan='2'></td></tr>
+	<tr><td>{mp2+mp3} total</td><td>-0.06333746</td></tr><tr><td colspan='2'></td></tr>
+	<tr><td>{total energy + mp correction} total</td><td>-75.00541741</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>orbital optimised mp2</caption>
+		<tr><th>cycle</th><th>total energy</th><th>&#916;(E)</th></tr>
+		<tr><td>7</td><td>   -74.99147132</td><td>-3.34074e-09</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>Laplace transform generated mp2</caption>
+		<tr><th>method</th><th1<energy (au)</th></tr>
+		<tr><td>reference scf energy</td><td>-74.94207995</td></tr>
+		<tr><td>parallel spin correlation</td><td>-0.00310618</td></tr>
+		<tr><td>anti-parallel spin correlation</td><td>-0.04603963</td></tr>
+		<tr><td>total spin correlation</td><td>-0.04914581</td></tr>
+		<tr><td>corrected scf energy</td><td>-74.99122576</td></tr>
+		<tr><td>total spin-component scaled</td><td>-0.05628295</td></tr>
+		<tr><td>corrected spin-component scaled</td><td>-74.99836290</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>many-body perturbation diagrams</caption>
+		<tr><td>mp2 correlation</td><td>-0.04914964</td></tr>
+		<tr><td>mp3 correlation</td><td>-0.01418782</td></tr>
+		<tr><td>mp4 correlation</td><td>-0.00469027</td></tr>
+		<tr><td>SCF energy</td><td>-74.94207995</td></tr>
+		<tr><td>Total corrected energy</td><td>-75.01010769</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>configuration interaction<sup> *</sup></caption>
+		<tr>
+		<td>0.287256 (t)</td>
+		<td>0.344425 (t)</td>
+		<td>0.356462 (s)</td>
+		<td>0.365989 (t)</td>
+		<td>0.394514 (t)</td>
+		<td>0.416072 (s)</td>
+		</tr>
+		<tr>
+		<td>0.505628 (s)</td>
+		<td>0.514290 (t)</td>
+		<td>0.555192 (s)</td>
+		<td>0.563056 (t)</td>
+		<td>0.655318 (s)</td>
+		<td>0.910122 (s)</td>
+		</tr>
+		<tr>
+		<td>1.108771 (t)</td>
+		<td>1.200096 (t)</td>
+		<td>1.300785 (s)</td>
+		<td>1.325762 (s)</td>
+		<td>19.958526 (t)</td>
+		<td>20.010979 (s)</td>
+		</tr>
+		<tr>
+		<td>20.011342 (t)</td>
+		<td>20.050532 (s)</td>
+		</tr>
+	</table>
+		<p style='margin-left:40px;font-size:10px;'><sup>*</sup> s -singlet, t -triplet</p>
+	<br>
+	<table><caption>block Davidson (first 5 eigenvalues)</caption>
+		<tr>
+		<td>0.287256</td>
+		<td>0.287256</td>
+		<td>0.287256</td>
+		<td>0.344425</td>
+		<td>0.344425</td>
+		</tr>
+	</table>
+	<br>
+	<table><caption>CIS significant excitations</caption>
+		<tr>
+		<tr><th>state</th><th>energy</th><th>(%) excitation</tr><tr>
+		</tr><tr><td>0</td><td>0.287256</td><td>(50)  8 -> 10</th>
+		<td>(50)  9 -> 11</td>
+		</tr><tr><td>1</td><td>0.287256</td><td>(94)  8 -> 11</th>
+		</tr><tr><td>2</td><td>0.287256</td><td>(94)  9 -> 10</th>
+		</tr><tr><td>3</td><td>0.344425</td><td>(44)  6 -> 10</th>
+		<td>(44)  7 -> 11</td>
+		</tr><tr><td>4</td><td>0.344425</td><td>(40)  6 -> 11</th>
+		<td>(49)  7 -> 10</td>
+		</tr><tr><td>5</td><td>0.344425</td><td>(49)  6 -> 11</th>
+		<td>(40)  7 -> 10</td>
+		</tr><tr><td>6</td><td>0.356462</td><td>(50)  8 -> 10</th>
+		<td>(50)  9 -> 11</td>
+		</tr><tr><td>7</td><td>0.365989</td><td>(50)  8 -> 12</th>
+		<td>(50)  9 -> 13</td>
+		</tr><tr><td>8</td><td>0.365989</td><td>(100)  9 -> 12</th>
+		</tr><tr><td>9</td><td>0.365989</td><td>(100)  8 -> 13</th>
+		</tr>
+	</tr></table>
+		<p style='margin-left:40px;font-size:10px;'>contributions over 10% of 10 lowest energy levels</p><br><hr align="left" width="40%">
+	<table><caption>configuration interaction spin-adapted singles</caption>
+		<tr>
+		<td>0.356462</td>
+		<td>0.416072</td>
+		<td>0.505628</td>
+		<td>0.555192</td>
+		<td>0.655318</td>
+		<td>0.910122</td>
+		</tr>
+		<tr>
+		<td>1.300785</td>
+		<td>1.325762</td>
+		<td>20.010979</td>
+		<td>20.050532</td>
+		</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>configuration interaction spin-adapted triplets</caption>
+		<tr>
+		<td>0.287256</td>
+		<td>0.344425</td>
+		<td>0.365989</td>
+		<td>0.394514</td>
+		<td>0.514290</td>
+		<td>0.563056</td>
+		</tr>
+		<tr>
+		<td>1.108771</td>
+		<td>1.200096</td>
+		<td>19.958526</td>
+		<td>20.011342</td>
+		</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>random phase approximation<sup> *</sup></caption>
+		<tr>
+		<td>0.285164 (t)</td>
+		<td>0.299743 (t)</td>
+		<td>0.352627 (t)</td>
+		<td>0.354778 (s)</td>
+		<td>0.365131 (t)</td>
+		<td>0.415318 (s)</td>
+		</tr>
+		<tr>
+		<td>0.500101 (s)</td>
+		<td>0.510661 (t)</td>
+		<td>0.546072 (t)</td>
+		<td>0.551372 (s)</td>
+		<td>0.650271 (s)</td>
+		<td>0.873425 (s)</td>
+		</tr>
+		<tr>
+		<td>1.103819 (t)</td>
+		<td>1.195787 (t)</td>
+		<td>1.283205 (s)</td>
+		<td>1.323742 (s)</td>
+		<td>19.958504 (t)</td>
+		<td>20.010947 (s)</td>
+		</tr>
+		<tr>
+		<td>20.011307 (t)</td>
+		<td>20.050492 (s)</td>
+		</tr>
+	</table>
+		<p style='margin-left:40px;font-size:10px;'><sup>*</sup> s -singlet, t -triplet</p><br><hr align="left" width="40%">
+	<table><caption>full configuration interaction</caption>
+		<tr><td>number of electrons</td><td>10</tr>
+		<tr><td>number of spin orbitals</td><td>14</tr>
+		<tr><td>number of determinants</td><td>1001</tr>
+		<tr><td>SCF energy</td><td>-74.942080</tr>
+		<tr><td>FCI energy</td><td>-75.012980</tr>
+		<tr><td>FCI correction</td><td> -0.070900</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>ci singles and doubles</caption>
+		<tr><td>number of electrons</td><td>10</tr>
+		<tr><td>number of spin orbitals</td><td>14</tr>
+		<tr><td>number of determinants</td><td>1001</tr>
+		<tr><td>SCF energy</td><td>-74.942080</tr>
+		<tr><td>CISD energy</td><td>-75.011223</tr>
+		<tr><td>CISD correction</td><td> -0.069143</tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>ci singles (slater determinants)</caption>
+		<tr><td>number of electrons</td><td>10</tr>
+		<tr><td>number of spin orbitals</td><td>14</tr>
+		<tr><td>number of determinants</td><td>40</tr>
+		<td>7.816620</td>
+		<td>7.816620</td>
+		<td>7.816620</td>
+		<td>9.372282</td>
+		<td>9.372282</td>
+		<td>9.372282</td>
+		</tr>
+		<tr>
+		<td>9.699819</td>
+		<td>9.959068</td>
+		<td>9.959068</td>
+		<td>9.959068</td>
+		<td>10.735267</td>
+		<td>10.735267</td>
+		</tr>
+		<tr>
+		<td>10.735267</td>
+		<td>11.321889</td>
+		<td>13.758846</td>
+		<td>13.994543</td>
+		<td>13.994543</td>
+		<td>13.994543</td>
+		</tr>
+		<tr>
+		<td>15.107540</td>
+		<td>15.321527</td>
+		<td>15.321527</td>
+		<td>15.321527</td>
+		<td>17.832123</td>
+		<td>24.765672</td>
+		</tr>
+		<tr>
+		<td>30.171194</td>
+		<td>30.171194</td>
+		<td>30.171194</td>
+		<td>32.656278</td>
+		<td>32.656278</td>
+		<td>32.656278</td>
+		</tr>
+		<tr>
+		<td>35.396167</td>
+		<td>36.075822</td>
+		<td>543.099141</td>
+		<td>543.099141</td>
+		<td>543.099141</td>
+		<td>544.526460</td>
+		</tr>
+		<tr>
+		<td>544.536329</td>
+		<td>544.536329</td>
+		<td>544.536329</td>
+		<td>545.602739</td>
+		</tr>
+	</table><br><hr align="left" width="40%"><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>on</b></p>
+	
+		<table>
+		<caption>coupled-cluster interations</caption>                       
+		<tr><th>ccsd energy</th><th>&#916;(E)</th><th>&#916;rms(amplitudes)</th></tr>
+		<tr><td>-0.0721394978</td><td>0</td><td>0</td></tr>
+		<tr><td>-0.0693207286</td><td>1.779670e-03</td><td>1.331253e-02</td></tr>
+		<tr><td>-0.0700700846</td><td>7.493560e-04</td><td>5.854548e-03</td></tr>
+		<tr><td>-0.0703998135</td><td>3.297290e-04</td><td>2.649446e-03</td></tr>
+		<tr><td>-0.0705488114</td><td>1.489979e-04</td><td>1.222540e-03</td></tr>
+		<tr><td>-0.0706799351</td><td>1.311237e-04</td><td>1.110052e-03</td></tr>
+		<tr><td>-0.0706800807</td><td>1.455987e-07</td><td>7.933262e-07</td></tr>
+		<tr><td>-0.0706800914</td><td>1.070254e-08</td><td>6.703937e-08</td></tr>
+		<tr><td>-0.0706800889</td><td>2.569719e-09</td><td>8.026180e-10</td></tr>
+	</table>
+	<p style='margin-left:40px;font-size:10px;'><b>ccsd converged in </b>10 cycles</b></p>
+	<table><caption>coupled cluster</caption>
+		<tr><td>mp2 correction</td><td>-0.04914964</td></tr><tr><td colspan='2'></td></tr>
+		<tr><td>singles and doubles CCSD</td><td>-0.07068009</td></tr>
+		<tr><td>perturbative triples CCSD(T)</td><td>-0.00009988</td></tr>
+		<tr><td>total ccsd correction</td><td>-0.07077997</td></tr><tr><td colspan='2'></td></tr>
+		<tr><td>total energy ccsd corrected</td><td>-75.01285992</td></tr>
+	</table><br><hr align="left" width="40%"><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>on</b></p>
+	
+		<table>
+		<caption>coupled-cluster interations</caption>                       
+		<tr><th>ccsd energy</th><th>&#916;(E)</th><th>&#916;rms(amplitudes)</th></tr>
+		<tr><td>-0.0494129196</td><td>0</td><td>0</td></tr>
+		<tr><td>-0.0493839100</td><td>1.918532e-05</td><td>1.814295e-04</td></tr>
+		<tr><td>-0.0493922535</td><td>8.343588e-06</td><td>7.860032e-05</td></tr>
+		<tr><td>-0.0493959929</td><td>3.739376e-06</td><td>3.513481e-05</td></tr>
+		<tr><td>-0.0493976886</td><td>1.695677e-06</td><td>1.590804e-05</td></tr>
+		<tr><td>-0.0493991130</td><td>1.424448e-06</td><td>1.334692e-05</td></tr>
+		<tr><td>-0.0493991130</td><td>1.539879e-12</td><td>1.497513e-11</td></tr>
+	</table>
+	<p style='margin-left:40px;font-size:10px;'><b>cc2 converged in </b>8 cycles</b></p>
+	<table><caption>coupled cluster CC2 <sup></sup></caption>
+		<tr><td>cc2 correction</td><td>-0.04939911</td></tr>
+		<tr><td>corrected energy</td><td>-74.99147907</td></tr>
+	</table><br><hr align="left" width="40%"><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>off</b></p>
+	
+		<table>
+		<caption>coupled-cluster interations</caption>                       
+		<tr><th>ccsd energy</th><th>&#916;(E)</th><th>&#916;rms(amplitudes)</th></tr>
+		<tr><td>-0.0775252822</td><td>0</td><td>0</td></tr>
+		<tr><td>-0.0683209634</td><td>4.983504e-03</td><td>3.423380e-02</td></tr>
+		<tr><td>-0.0703222366</td><td>2.001273e-03</td><td>1.470066e-02</td></tr>
+		<tr><td>-0.0711902731</td><td>8.680365e-04</td><td>6.646830e-03</td></tr>
+		<tr><td>-0.0715826492</td><td>3.923760e-04</td><td>3.081582e-03</td></tr>
+		<tr><td>-0.0717642252</td><td>1.815761e-04</td><td>1.450789e-03</td></tr>
+		<tr><td>-0.0718495877</td><td>8.536242e-05</td><td>6.914634e-04</td></tr>
+		<tr><td>-0.0718902452</td><td>4.065756e-05</td><td>3.334865e-04</td></tr>
+		<tr><td>-0.0719098556</td><td>1.961043e-05</td><td>1.628538e-04</td></tr>
+		<tr><td>-0.0719194394</td><td>9.583791e-06</td><td>8.060267e-05</td></tr>
+		<tr><td>-0.0719241892</td><td>4.749778e-06</td><td>4.047168e-05</td></tr>
+		<tr><td>-0.0719265785</td><td>2.389294e-06</td><td>2.063125e-05</td></tr>
+		<tr><td>-0.0719277992</td><td>1.220671e-06</td><td>1.068163e-05</td></tr>
+		<tr><td>-0.0719284327</td><td>6.335376e-07</td><td>5.616500e-06</td></tr>
+		<tr><td>-0.0719287667</td><td>3.339760e-07</td><td>2.997756e-06</td></tr>
+		<tr><td>-0.0719289454</td><td>1.787160e-07</td><td>1.622729e-06</td></tr>
+		<tr><td>-0.0719290424</td><td>9.698204e-08</td><td>8.898153e-07</td></tr>
+		<tr><td>-0.0719290957</td><td>5.330306e-08</td><td>4.935842e-07</td></tr>
+		<tr><td>-0.0719291253</td><td>2.962975e-08</td><td>2.765656e-07</td></tr>
+		<tr><td>-0.0719291419</td><td>1.663324e-08</td><td>1.563094e-07</td></tr>
+		<tr><td>-0.0719291514</td><td>9.416100e-09</td><td>8.898838e-08</td></tr>
+		<tr><td>-0.0719291567</td><td>5.368172e-09</td><td>5.096942e-08</td></tr>
+		<tr><td>-0.0719291598</td><td>3.078352e-09</td><td>2.933908e-08</td></tr>
+		<tr><td>-0.0719291616</td><td>1.773735e-09</td><td>1.695677e-08</td></tr>
+		<tr><td>-0.0719291626</td><td>1.026002e-09</td><td>9.832472e-09</td></tr>
+	</table>
+	<p style='margin-left:40px;font-size:10px;'><b>lccd converged in </b>26 cycles</b></p>
+	<table><caption>linear coupled cluster doubles <sup>*</sup></caption>
+		<tr><td>lccd correction</td><td>-0.07192916</td></tr>
+		<tr><td>corrected energy</td><td>-75.01400912</td></tr>
+	</table>
+		<p style='margin-left:40px;font-size:10px;'><sup>*</sup>coupled electron pair approximation (zero)</p><br><hr align="left" width="40%"><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>off</b></p>
+	
+		<table>
+		<caption>coupled-cluster interations</caption>                       
+		<tr><th>ccsd energy</th><th>&#916;(E)</th><th>&#916;rms(amplitudes)</th></tr>
+		<tr><td>-0.0764020537</td><td>0</td><td>0</td></tr>
+		<tr><td>-0.0672403170</td><td>4.464472e-03</td><td>3.081237e-02</td></tr>
+		<tr><td>-0.0689293767</td><td>1.689060e-03</td><td>1.244851e-02</td></tr>
+		<tr><td>-0.0696217609</td><td>6.923842e-04</td><td>5.297244e-03</td></tr>
+		<tr><td>-0.0699170665</td><td>2.953056e-04</td><td>2.308803e-03</td></tr>
+		<tr><td>-0.0700458109</td><td>1.287444e-04</td><td>1.021530e-03</td></tr>
+		<tr><td>-0.0701028282</td><td>5.701729e-05</td><td>4.578962e-04</td></tr>
+		<tr><td>-0.0701284422</td><td>2.561398e-05</td><td>2.080163e-04</td></tr>
+		<tr><td>-0.0701401185</td><td>1.167637e-05</td><td>9.588013e-05</td></tr>
+		<tr><td>-0.0701455251</td><td>5.406571e-06</td><td>4.489327e-05</td></tr>
+		<tr><td>-0.0701480705</td><td>2.545354e-06</td><td>2.137318e-05</td></tr>
+		<tr><td>-0.0701492897</td><td>1.219240e-06</td><td>1.035184e-05</td></tr>
+		<tr><td>-0.0701498841</td><td>5.943569e-07</td><td>5.100621e-06</td></tr>
+		<tr><td>-0.0701501788</td><td>2.947770e-07</td><td>2.555322e-06</td></tr>
+		<tr><td>-0.0701503275</td><td>1.486191e-07</td><td>1.300281e-06</td></tr>
+		<tr><td>-0.0701504035</td><td>7.607624e-08</td><td>6.711068e-07</td></tr>
+		<tr><td>-0.0701504430</td><td>3.947720e-08</td><td>3.507568e-07</td></tr>
+		<tr><td>-0.0701504638</td><td>2.073139e-08</td><td>1.853288e-07</td></tr>
+		<tr><td>-0.0701504748</td><td>1.099886e-08</td><td>9.882785e-08</td></tr>
+		<tr><td>-0.0701504806</td><td>5.885607e-09</td><td>5.310610e-08</td></tr>
+		<tr><td>-0.0701504838</td><td>3.171835e-09</td><td>2.871700e-08</td></tr>
+		<tr><td>-0.0701504855</td><td>1.719239e-09</td><td>1.560796e-08</td></tr>
+		<tr><td>-0.0701504865</td><td>9.362297e-10</td><td>8.517826e-09</td></tr>
+	</table>
+	<p style='margin-left:40px;font-size:10px;'><b>ccd converged in </b>24 cycles</b></p>
+	<table><caption>coupled cluster doubles <sup></sup></caption>
+		<tr><td>ccd correction</td><td>-0.07015049</td></tr>
+		<tr><td>corrected energy</td><td>-75.01223044</td></tr>
+	</table><br><hr align="left" width="40%"><p style='margin-left:40px;font-size:10px;'>direct inversion of the iterative sub-space (diis) is <b>on</b></p>
+	
+		<table>
+		<caption>coupled-cluster interations</caption>                       
+		<tr><th>ccsd energy</th><th>&#916;(E)</th><th>&#916;rms(amplitudes)</th></tr>
+		<tr><td>-0.0778975881</td><td>0</td><td>0</td></tr>
+		<tr><td>-0.0686659407</td><td>5.142328e-03</td><td>3.550485e-02</td></tr>
+		<tr><td>-0.0707771284</td><td>2.111188e-03</td><td>1.564786e-02</td></tr>
+		<tr><td>-0.0717174203</td><td>9.402919e-04</td><td>7.298489e-03</td></tr>
+		<tr><td>-0.0721560915</td><td>4.386712e-04</td><td>3.509116e-03</td></tr>
+		<tr><td>-0.0725760091</td><td>4.199176e-04</td><td>3.491896e-03</td></tr>
+		<tr><td>-0.0725764595</td><td>4.504713e-07</td><td>2.608846e-06</td></tr>
+		<tr><td>-0.0725765928</td><td>1.332681e-07</td><td>7.407141e-07</td></tr>
+		<tr><td>-0.0725765878</td><td>5.026186e-09</td><td>7.013158e-09</td></tr>
+	</table>
+	<p style='margin-left:40px;font-size:10px;'><b>lccsd converged in </b>10 cycles</b></p>
+	<table><caption>linear coupled-cluster singles and doubles<sup></sup></caption>
+		<tr><td>lccsd correction</td><td>-0.07257659</td></tr>
+		<tr><td>corrected energy</td><td>-75.01465654</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>molecular forces (E<sub>h</sub>a<sub>0</sub><sup>-1)</sup></caption>
+		<tr><th>atom</th><th>x</th><th>y</th><th>z</th></tr>
+		<tr><td colspan='4'>analytic</td></tr>
+		<tr><td>O1</td><td>0.000000</td><td>0.097441</td><td>0.000000</td></tr>
+		<tr><td>H1</td><td>-0.086300</td><td>-0.048721</td><td>0.000000</td></tr>
+		<tr><td>H2</td><td>0.086300</td><td>-0.048721</td><td>0.000000</td></tr>
+		<tr><td colspan='4'>numeric</td></tr>
+		<tr><td>O1</td><td>-0.000000</td><td>0.097441</td><td>-0.000000</td></tr>
+		<tr><td>H1</td><td>-0.086300</td><td>-0.048721</td><td>-0.000000</td></tr>
+		<tr><td>H2</td><td>0.086300</td><td>-0.048721</td><td>-0.000000</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>electron propogator - Koopman's theorem</caption>
+		<tr><th>HOMO - n</th><th>Koopman (eV)</th><th>EP2 (eV)</th></tr>
+		<tr><td colspan='3'><b>ep2 spatial</b></td></tr>
+			<tr><td>  -1</td><td>-11.8785</td><td>-10.3403</td></tr>
+			<tr><td>   0</td><td>-10.5468</td><td>-7.4044</td></tr>
+			<tr><td>   1</td><td>12.9967</td><td>12.8950</td></tr>
+			<tr><td>   2</td><td>16.0041</td><td>15.6734</td></tr>
+	<tr><td colspan='3'><b>ep2 spin</b></td></tr>
+			<tr><td>   4</td><td>-551.3813</td><td>-541.7558</td></tr>
+			<tr><td>   3</td><td>-32.9175</td><td>-29.8607</td></tr>
+			<tr><td>   2</td><td>-14.9109</td><td>-14.5980</td></tr>
+			<tr><td>   1</td><td>-11.8785</td><td>-10.3404</td></tr>
+			<tr><td>   0</td><td>-10.5468</td><td>-7.4044</td></tr>
+	<tr><td colspan='3'><b>ep3 spin</b></td></tr>
+			<tr><td>   4</td><td>-551.3813</td><td>-543.6306</td></tr>
+			<tr><td>   3</td><td>-32.9175</td><td>-29.2271</td></tr>
+			<tr><td>   2</td><td>-14.9109</td><td>-14.8363</td></tr>
+			<tr><td>   1</td><td>-11.8785</td><td>-10.7673</td></tr>
+			<tr><td>   0</td><td>-10.5468</td><td>-8.1825</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>Approximate Greens function correction to Koopmans theorem (eV)</caption>
+		<tr><th>HOMO - n</th><th>Koopman</th><th>orbital relaxation</th><th>pair relaxation</th><th>pair removal</th><th>correction</th><th>KP + correction</th></tr>
+		<tr><td> 0</td><td>551.3813</td><td>12.6457</td><td>0.0171</td><td>-0.0016</td><td>-12.6644</td><td>538.7169
+		<tr><td> 1</td><td>32.9175</td><td>1.9254</td><td>3.1906</td><td>-0.2181</td><td>-5.3342</td><td>27.5834
+		<tr><td> 2</td><td>14.9109</td><td>0.7215</td><td>0.2512</td><td>-0.6473</td><td>-1.6200</td><td>13.2909
+		<tr><td> 3</td><td>11.8785</td><td>1.8733</td><td>0.2178</td><td>-0.4429</td><td>-2.5340</td><td>9.3445
+		<tr><td> 4</td><td>10.5468</td><td>3.4479</td><td>0.0579</td><td>-0.0276</td><td>-3.5334</td><td>7.0134
+	</table><br><hr align="left" width="40%">
+	<table><caption>polarizability (&#945) (coupled-perturbed SCF)</caption>
+		<tr><td colspan='3'><b>principal polarizabilities</b></td></tr>
+		<tr><td>7.9356</td><td>0.0504</td><td>3.0682</td></tr>
+		<tr><td colspan='2'><b>isotropic</b></td><td>3.6847</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>polarizability (&#945) (coupled-perturbed SCF)</caption>
+		<tr><td colspan='3'><b>principal polarizabilities</b></td></tr>
+		<tr><td>7.9356</td><td>0.0504</td><td>3.0682</td></tr>
+		<tr><td colspan='2'><b>isotropic</b></td><td>3.6847</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>static hyperpolarizability (&#946) (au)</caption>
+		<tr><th>x</th><th>y</th><th>z</th></tr>
+		<tr><td>-0.0000</td><td>-14.4106</td><td>0.0002</td></tr>
+		<tr><td colspan='2'>amplitude</td><td>14.4106</td></tr>
+		<tr><td colspan='2'>&#8741<sub>z</sub></td><td>0.0000</td></tr>
+		<tr><td colspan='2'>&#8869<sub>z</sub></td><td>0.0001</td></tr>
+	</table><br><hr align="left" width="40%">
+	<table><caption>Cluster Operator Generator Using Sympy</caption>
+		<tr><td>CCD</td><td>-0.0701504876</td><td></td></tr>
+		<tr><td>CCSD</td><td>-0.0706800888</td><td></td></tr>
+		<tr><td>CCSDT</td><td>-0.0708128081</td><td></td></tr>
+		<tr><td>CCSD(T)</td><td>-0.0706800888</td><td>-9.98773e-05</td></tr>
+		<tr><td>CC2</td><td>-0.0493991402</td><td></td></tr>
+		<tr><td>CC3</td><td>-0.0707780329</td><td></td></tr>
+		<tr><td>LCCD</td><td>-0.0719291641</td><td></td></tr>
+		<tr><td>LCCSD</td><td>-0.0725765893</td><td></td></tr>
+	</table>
+</body>

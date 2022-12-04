@@ -1,0 +1,53 @@
+### CCSD
+These are the results for H<sub>2</sub> in a 3-21g basis
+
+scf energy is -1.1229402577 Hartree\
+CCSD correction is -0.0248728759 Hartree
+
+most significant amplitudes
+|                            |
+|----------------------------|
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t<sup>a</sup><sub>i</sub> |
+|-0.005758 (0, 4)            |
+|-0.005758 (1, 5)            |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t<sup>ab</sup><sub>ij</sub>|
+|-0.084054 (1, 0, 3, 2)  |
+|-0.084054 (0, 1, 2, 3)|
+|-0.047829 (0, 1, 4, 5)|
+|-0.047829 (1, 0, 5, 4)|
+|-0.043512 (1, 0, 3, 6)|
+
+### EOM-CCSD
+|   |   |   |   |
+|---|---|---|---|
+|10.852655 (t)| 	15.898409 (s) |	26.471206 (t) |	30.521616 (s) |
+|31.881401 (s)|     40.401958 (t) |	41.140826 (s) |	43.232126 (t) |
+
+results from Gaussian
+|   |   |   |   |
+|---|---|---|---|
+|10.8527|10.8527|10.8527|15.8984|
+|26.4712|26.4712|26.4712|30.5216|
+|31.8814|40.4020|40.4020|40.4020|
+
+### EOM-MBPT(2)
+|   |   |   |   |
+|---|---|---|---|
+|10.657194 (t) |	15.708727 (s) |	26.265493 (t) 	|30.222336 (s) | 	
+|31.678520 (s) | 40.207311 (t) 	|40.912816 (s) 	|43.016807 (t) |
+
+results from Gaussian
+|   |   |   |   |
+|---|---|---|---|
+|10.6572| 10.6572| 10.6572| 15.7087|
+| 26.2655| 26.2655| 26.2655| 30.2223|
+|31.6785| 40.2073| 40.2073| 40.2073|
+
+*Gaussian results from JJ Goings*
+
+### &Lambda;-CCSD
+|       |          |
+|-------|----------|
+|pseudo-energy | -0.02451418 |
+
+*agrees with psi4numpy*
