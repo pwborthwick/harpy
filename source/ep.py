@@ -8,7 +8,7 @@ def electronPropagator2(molBasis, c, ERI, eps, nOccupied, startOrbital = 2, nOrb
     #electron propagator (2)
 
     eV = getConstant('hartree->eV')
-    threshold = 1e-4
+    threshold = 1e-6
     iterations = 20
 
     nBasis = len(molBasis)
@@ -79,7 +79,7 @@ def electronPropagator2spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
     #spin version of electron propagator 2
 
     eV = getConstant('hartree->eV')
-    threshold = 1e-4
+    threshold = 1e-6
     iterations = 50
 
     nBasis = len(molBasis)
@@ -131,21 +131,24 @@ def electronPropagator2spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                 ep2.append(eNow * eV)
                 break
 
-            # Build derivatives
+            # Build derivatives - denomnator is function of 'e' so derivative of 1/x is -1/x*x
             dSigmaA = 0.0
             for r in range(nOccupied, spinOrbitals):
                 for s in range(nOccupied, spinOrbitals):
                     for a in range(0, nOccupied):
-                        dSigmaA += eriMOspin[r,s,orbital,a] * eriMOspin[orbital,a,r,s] / \
+                        dSigmaA -= 0.5 * eriMOspin[r,s,orbital,a] * eriMOspin[orbital,a,r,s] / \
                                    (power((e+eps[a]-eps[r]-eps[s]), 2))
             dSigmaB = 0.0
             for r in range(nOccupied, spinOrbitals):
                 for a in range(0, nOccupied):
                     for b in range(0, nOccupied):
-                        dSigmaB += eriMOspin[a,b,orbital,r] * eriMOspin[orbital,r,a,b] /  \
+                        dSigmaB -= 0.5 * eriMOspin[a,b,orbital,r] * eriMOspin[orbital,r,a,b] /  \
                                    (power((e+eps[r]-eps[a]-eps[b]), 2))
 
-            dSigma = 1 + (dSigmaA + dSigmaB)
+            #E = \epsilon + \Sigma^(2)_{pp} so dE = d(\epsilon) + d\Sigma and d(\epsilon) = 1 -d(\Sigma)/dE
+            dSigma = 1 - (dSigmaA + dSigmaB)
+            
+            #Newton-Raphson step
             e = ePre - (ePre - eNow) / dSigma
 
         if not converged:
@@ -160,7 +163,7 @@ def electronPropagator2spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
 def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals = 5):
     #electron propagator 3
     eV = getConstant('hartree->eV')
-    threshold = 1e-4
+    threshold = 1e-6
     iterations = 50
 
     nBasis = len(molBasis)
@@ -208,7 +211,7 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                       * eriMOspin[orbital,r,a,b] / (e+eps[r]-eps[a]-eps[b])
 
             #new sigma total
-            eNow = eps[orbital] + sigmaA + sigmaB
+            eNow = eps[orbital] + (sigmaA + sigmaB)
 
             # Break if below threshold
             if abs(eNow - ePre) < threshold:
@@ -221,16 +224,16 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
             for r in range(nOccupied, spinOrbitals):
                 for s in range(nOccupied, spinOrbitals):
                     for a in range(0, nOccupied):
-                        dSigmaA += eriMOspin[r,s,orbital,a] * eriMOspin[orbital,a,r,s] / \
+                        dSigmaA += 0.5 * eriMOspin[r,s,orbital,a] * eriMOspin[orbital,a,r,s] / \
                                             (power((e+eps[a]-eps[r]-eps[s]), 2))
             dSigmaB = 0.0
             for r in range(nOccupied, spinOrbitals):
                 for a in range(0, nOccupied):
                     for b in range(0, nOccupied):
-                        dSigmaB += eriMOspin[a,b,orbital,r] * eriMOspin[orbital,r,a,b] /  \
+                        dSigmaB += 0.5 * eriMOspin[a,b,orbital,r] * eriMOspin[orbital,r,a,b] /  \
                                             (power((e+eps[r]-eps[a]-eps[b]), 2))
 
-            dSigma = 1 + (dSigmaA + dSigmaB)
+            dSigma = 1 - (dSigmaA + dSigmaB)
             e = ePre - (ePre - eNow) / dSigma
 
         if not converged:
@@ -240,7 +243,8 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
         #ep2 value for orbital
         orbitalEp2 = e
 
-        #electron propagator (3)
+        #electron propagator (3) - these are energy independent terms arising from Hugenholtz diagrams of third order
+        # with 1 pair of equivalent lines and a bubble which is cut.
         f = 0.0
         for a in range(0, nOccupied):
             for b in range(0, nOccupied):
@@ -286,7 +290,7 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                        ((eps[b]+eps[c]-eps[p]-eps[q])*(eps[a]-eps[p]))
 
         #koopman-ep2 average guess for ep3 calculation
-        e = (orbitalEp2 + eps[orbital]) / 2
+        e = (orbitalEp2 + eps[orbital]) * 0.5 
 
         converged = False
         for cycle in range(iterations):
@@ -295,7 +299,7 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
             eNow = eps[orbital] + f
             de = 0
 
-            #ep3 - quadratic eri terms
+            #ep3 - quadratic eri terms from EP(2) self-energy Hugenholtz diagrams
             for a in range(0, nOccupied):
                 for p in range(nOccupied, spinOrbitals):
                     for q in range(nOccupied, spinOrbitals):
@@ -311,7 +315,10 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                         eNow += termA/termB
                         de   += -1.0 * termA/(termB*termB)
 
-            #ep3 - cubic eri terms(1)
+            #ep3 - cubic eri terms(1) - the terms with factor 0.25 are formed from Hugenholtz diagrams in 
+            # there are two pairs of equivalent (inner) lines. Each of the six lines in the diagram can be cut to 
+            # produce a term.
+            
             for a in range(0, nOccupied):
                 for p in range(nOccupied, spinOrbitals):
                     for q in range(nOccupied, spinOrbitals):
@@ -323,14 +330,61 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                 de += -termA/(termB * (e+eps[a]-eps[p]-eps[r])) -termA/(termB * (e+eps[a]-eps[q]-eps[s]))
             for a in range(0, nOccupied):
                 for b in range(0, nOccupied):
+                    for c in range(0, nOccupied):
+                        for p in range(nOccupied, spinOrbitals):
+                            for q in range(nOccupied, spinOrbitals):
+                                termA = 0.25 * eriMOspin[orbital,c,a,b] * eriMOspin[a,b,p,q] * eriMOspin[p,q,orbital,c] 
+                                termB = (e+eps[c]-eps[p]-eps[q]) * (eps[a]+eps[b]-eps[p]-eps[q])
+                                eNow += termA/termB
+                                de   -= termA/(termB * (e+eps[c]-eps[p]-eps[q])) 
+            for a in range(0, nOccupied):
+                for b in range(0, nOccupied):
+                    for c in range(0, nOccupied):
+                        for p in range(nOccupied, spinOrbitals):
+                            for q in range(nOccupied, spinOrbitals):
+                                termA = 0.25 * eriMOspin[orbital,b,p,q] * eriMOspin[p,q,a,c] * eriMOspin[a,c,orbital,b] 
+                                termB = (e+eps[b]-eps[p]-eps[q]) * (eps[a]+eps[c]-eps[p]-eps[q])
+                                eNow += termA/termB
+                                de   -= termA/(termB * (e+eps[c]-eps[p]-eps[q])) 
+            for a in range(0, nOccupied):
+                for b in range(0, nOccupied):
+                    for p in range(nOccupied, spinOrbitals):
+                        for q in range(nOccupied, spinOrbitals):
+                            for r in range(nOccupied, spinOrbitals):
+                                termA = 0.25 * eriMOspin[orbital,q,a,b] * eriMOspin[a,b,p,r] * eriMOspin[p,r,orbital,q]
+                                termB = (e+eps[q]-eps[a]-eps[b]) * (eps[p]+eps[r]-eps[a]-eps[b])
+                                eNow -= termA/termB
+                                de   += termA/(termB *  (e+eps[q]-eps[a]-eps[b]))
+            for a in range(0, nOccupied):
+                for b in range(0, nOccupied):
+                    for p in range(nOccupied, spinOrbitals):
+                        for q in range(nOccupied, spinOrbitals):
+                            for r in range(nOccupied, spinOrbitals):
+                                termA = 0.25 * eriMOspin[orbital,r,p,q] * eriMOspin[p,q,a,b] * eriMOspin[a,b,orbital,r]
+                                termB = (e+eps[r]-eps[a]-eps[b]) * (eps[p]+eps[q]-eps[a]-eps[b])
+                                eNow -= termA/termB
+                                de   += termA/(termB *  (e+eps[r]-eps[a]-eps[b]))
+            for a in range(0, nOccupied):
+                for b in range(0, nOccupied):
+                    for c in range(0, nOccupied):
+                        for d in range(0, nOccupied):
+                            for p in range(nOccupied, spinOrbitals):
+                                termA = 0.25 * eriMOspin[orbital,p,b,d] * eriMOspin[b,d,a,c] * eriMOspin[a,c,orbital,p]
+                                termB = (e+eps[p]-eps[b]-eps[d]) * (e+eps[p]-eps[a]-eps[c])
+                                eNow -= termA/termB
+                                de   += termA/(termB *  (e+eps[p]-eps[b]-eps[d]))
+                                de   += termA/(termB *  (e+eps[p]-eps[a]-eps[c]))
+                                
+            # the terms with factor one are formed from the Hugenholtz diagram which has no equivalent lines
+            for a in range(0, nOccupied):
+                for b in range(0, nOccupied):
                     for p in range(nOccupied, spinOrbitals):
                         for q in range(nOccupied, spinOrbitals):
                             for r in range(nOccupied, spinOrbitals):
                                 termA = eriMOspin[orbital,a,q,r] * eriMOspin[q,b,p,a] * eriMOspin[p,r,orbital,b] 
                                 termB = (e+eps[b]-eps[p]-eps[r]) * (e+eps[a]-eps[q]-eps[r])
                                 eNow -= termA/termB
-                                de   += termA/(termB * (e+eps[b]-eps[p]-eps[r])) + termA/(termB * (e+eps[a]-eps[q]-eps[r]))
-            #(2)
+                                de   += termA/(termB * (e+eps[b]-eps[p]-eps[r])) + termA/(termB * (e+eps[a]-eps[q]-eps[r]))  
             for a in range(0, nOccupied):
                 for b in range(0, nOccupied):
                     for p in range(nOccupied, spinOrbitals):
@@ -340,15 +394,6 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                 termB = (e+eps[b]-eps[p]-eps[q]) * (eps[a]+eps[b]-eps[p]-eps[r])
                                 eNow -= termA/termB
                                 de   += termA/(termB * (e+eps[b]-eps[p]-eps[r])) 
-            for a in range(0, nOccupied):
-                for b in range(0, nOccupied):
-                    for c in range(0, nOccupied):
-                        for p in range(nOccupied, spinOrbitals):
-                            for q in range(nOccupied, spinOrbitals):
-                                termA = 0.25 * eriMOspin[orbital,c,a,b] * eriMOspin[a,b,p,q] * eriMOspin[p,q,orbital,c] 
-                                termB = (e+eps[c]-eps[p]-eps[q]) * (eps[a]+eps[b]-eps[p]-eps[q])
-                                eNow += termA/termB
-                                de   -= termA/(termB * (e+eps[c]-eps[p]-eps[q])) 
             for a in range(0, nOccupied):
                 for b in range(0, nOccupied):
                     for p in range(nOccupied, spinOrbitals):
@@ -363,39 +408,10 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                     for c in range(0, nOccupied):
                         for p in range(nOccupied, spinOrbitals):
                             for q in range(nOccupied, spinOrbitals):
-                                termA = 0.25 * eriMOspin[orbital,b,p,q] * eriMOspin[p,q,a,c] * eriMOspin[a,c,orbital,b] 
-                                termB = (e+eps[b]-eps[p]-eps[q]) * (eps[a]+eps[c]-eps[p]-eps[q])
-                                eNow += termA/termB
-                                de   -= termA/(termB * (e+eps[c]-eps[p]-eps[q])) 
-
-            #(3)
-            for a in range(0, nOccupied):
-                for b in range(0, nOccupied):
-                    for p in range(nOccupied, spinOrbitals):
-                        for q in range(nOccupied, spinOrbitals):
-                            for r in range(nOccupied, spinOrbitals):
-                                termA = 0.25 * eriMOspin[orbital,q,a,b] * eriMOspin[a,b,p,r] * eriMOspin[p,r,orbital,q]
-                                termB = (e+eps[q]-eps[a]-eps[b]) * (eps[p]+eps[r]-eps[a]-eps[b])
-                                eNow -= termA/termB
-                                de   += termA/(termB *  (e+eps[q]-eps[a]-eps[b]))
-            for a in range(0, nOccupied):
-                for b in range(0, nOccupied):
-                    for c in range(0, nOccupied):
-                        for p in range(nOccupied, spinOrbitals):
-                            for q in range(nOccupied, spinOrbitals):
                                 termA = eriMOspin[orbital,q,a,c] * eriMOspin[a,b,p,q] * eriMOspin[p,c,orbital,b]
                                 termB = (e+eps[q]-eps[a]-eps[c]) * (eps[p]+eps[q]-eps[a]-eps[b])
                                 eNow += termA/termB
                                 de   -= termA/(termB *  (e+eps[q]-eps[a]-eps[c]))
-            for a in range(0, nOccupied):
-                for b in range(0, nOccupied):
-                    for p in range(nOccupied, spinOrbitals):
-                        for q in range(nOccupied, spinOrbitals):
-                            for r in range(nOccupied, spinOrbitals):
-                                termA = 0.25 * eriMOspin[orbital,r,p,q] * eriMOspin[p,q,a,b] * eriMOspin[a,b,orbital,r]
-                                termB = (e+eps[r]-eps[a]-eps[b]) * (eps[p]+eps[q]-eps[a]-eps[b])
-                                eNow -= termA/termB
-                                de   += termA/(termB *  (e+eps[r]-eps[a]-eps[b]))
             for a in range(0, nOccupied):
                 for b in range(0, nOccupied):
                     for c in range(0, nOccupied):
@@ -405,7 +421,6 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                 termB = (e+eps[q]-eps[a]-eps[b]) * (eps[p]+eps[q]-eps[a]-eps[c])
                                 eNow += termA/termB
                                 de   -= termA/(termB *  (e+eps[q]-eps[a]-eps[b]))
-            #(4)
             for a in range(0, nOccupied):
                 for b in range(0, nOccupied):
                     for c in range(0, nOccupied):
@@ -416,19 +431,9 @@ def electronPropagator3spin(molBasis, c, ERI, eigenValues, nOccupied, nOrbitals 
                                 eNow += termA/termB
                                 de   -= termA/(termB *  (e+eps[p]-eps[b]-eps[c]))
                                 de   -= termA/(termB *  (e+eps[q]-eps[a]-eps[c]))
-            for a in range(0, nOccupied):
-                for b in range(0, nOccupied):
-                    for c in range(0, nOccupied):
-                        for d in range(0, nOccupied):
-                            for p in range(nOccupied, spinOrbitals):
-                                termA = 0.25 * eriMOspin[orbital,p,b,d] * eriMOspin[b,d,a,c] * eriMOspin[a,c,orbital,p]
-                                termB = (e+eps[p]-eps[b]-eps[d]) * (e+eps[p]-eps[a]-eps[c])
-                                eNow -= termA/termB
-                                de   += termA/(termB *  (e+eps[p]-eps[b]-eps[d]))
-                                de   += termA/(termB *  (e+eps[p]-eps[a]-eps[c]))
 
             # Break if below threshold
-            if abs(eNow - ePre) < 1.e-4:
+            if abs(eNow - ePre) < threshold:
                 ep3.append(eNow * 27.21138505)
                 converged = True
                 break
@@ -448,8 +453,6 @@ def koopmanAGFcorrection(molBasis ,c ,ERI, eigenValues, nOccupied, nOrbitals = 5
     #Approximate Green's function approximation correction to koopman IP
 
     eV = getConstant('hartree->eV')
-    threshold = 1e-4
-    iterations = 50
 
     nBasis = len(molBasis)
     spinOrbitals = nBasis * 2
