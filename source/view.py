@@ -695,9 +695,11 @@ def postSCF(data, type):
                                      + "%.6f" % data[0][i,2] + '</td></tr>')
         f.write('\n\t</table>')
 
-    if type == 'ep':
+    if type in ['ep', 'eps', 'ep3']:
         delimiter(f)
         f.write('\n\t<table><caption>electron propogator - Koopman\'s theorem</caption>')
+
+    if type == 'ep':
         f.write('\n\t\t<tr><th>HOMO - n</th><th>Koopman (eV)</th><th>EP2 (eV)</th></tr>')
         f.write('\n\t\t<tr><td colspan=\'3\'><b>ep2 spatial</b></td></tr>')
         koopman = data[2] * data[3]
@@ -707,6 +709,7 @@ def postSCF(data, type):
             f.write('\n\t\t\t<tr><td>' + "% 4d" % (kpOrbital - data[4] + 1) + '</td><td>' + "%.4f" % koopman[kpOrbital] + \
                      '</td><td>' + "%.4f" % data[1][orbital] + '</td></tr>')
     if type == 'eps':
+        f.write('\n\t\t<tr><th>HOMO - n</th><th>Koopman (eV)</th><th>EP2 (eV)</th></tr>')
         f.write('\n\t<tr><td colspan=\'3\'><b>ep2 spin</b></td></tr>')
         koopman = zeros(len(data[0]))
         for i in range(0, len(data[0])):
@@ -715,6 +718,7 @@ def postSCF(data, type):
             f.write('\n\t\t\t<tr><td>' + "% 4d" % (len(data[0])-orbital-1) + '</td><td>' + "%.4f" % koopman[orbital] + \
                      '</td><td>' + "%.4f" % data[0][orbital] + '</td></tr>')
     if type == 'ep3':
+        f.write('\n\t\t<tr><th>HOMO - n</th><th>Koopman (eV)</th><th>EP3 (eV)</th></tr>')
         f.write('\n\t<tr><td colspan=\'3\'><b>ep3 spin</b></td></tr>')
         koopman = zeros(len(data[0]))
         for i in range(0, len(data[0])):
@@ -723,7 +727,9 @@ def postSCF(data, type):
             f.write('\n\t\t\t<tr><td>' + "% 4d" % (len(data[0])-orbital-1) + '</td><td>' + "%.4f" % koopman[orbital] + \
                      '</td><td>' + "%.4f" % data[0][orbital] + '</td></tr>')
         f.write('\n\t</table>')
-
+    if type in ['ep', 'eps', 'ep3']:
+        f.write('\n\t</table><br>')
+        
     if type == 'gfa':
         if data[0] == -1:
             delimiter(f)
